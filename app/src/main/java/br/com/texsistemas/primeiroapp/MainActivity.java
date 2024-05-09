@@ -16,15 +16,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void alterarTexto(View view) {
+    public void sortearNumero(View view) {
 
         TextView texto = findViewById(R.id.textResultado);
 
-        Random random = new Random();
+        int resultado = new Random().nextInt(11);
 
-        int resultado = random.ints(0, 10).findAny().getAsInt();
-
-        texto.setText(getString(R.string.label_resultado) + " " + resultado );
+        texto.setText(String.format("%s %d", getString(R.string.label_resultado), resultado));
 
     }
 
